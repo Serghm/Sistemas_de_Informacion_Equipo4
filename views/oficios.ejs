@@ -1,0 +1,29 @@
+<% -include ('partials/header') %>
+<main>
+    <div class="container form-container form-container-md" style="margin-top: 20px;">
+        <h1 class="mb-4 text-center">Formulario de Registro de Oficios</h1>
+        <form action="/guardar-oficio" method="POST">
+            <div class="mb-3">
+                <label for="destinatario" class="form-label">Nombre del Destinatario</label>
+                <input type="text" class="form-control" id="destinatario" name="destinatario" placeholder="Ej.Juan Pérez" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="departamento" class="form-label">Departamento:</label>
+                <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Ej. Recursos Humanos" autocomplete="off" required>
+            </div>
+            <div class="mb-3">
+                <label for="asunto" class="form-label">Asunto:</label>
+                <textarea class="form-control" id="asunto" name="asunto" rows="4" placeholder="Describe el motivo del oficio" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="fecha" class="form-label">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Generar y Guardar Oficio</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<%- include ('partials/footer') %>
