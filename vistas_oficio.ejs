@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<main>
+    <div class="container form-container form-container-md">
+        <h1 class="mb-4 text-center">
+            Oficio registrado con éxito
+        </h1>
+        <% if (typeof oficio != 'undefined' && oficio) {%>
+            <div class="data-item">
+                <span class="data-label">CONSECUTIVO:</span>
+                <pre class="data-value"> <%= oficio.consecutivo%> </pre>
+            </div>
+            <div class="data-item">
+                <span class="data-label">DESTINATARIO:</span>
+                <pre class="data-value"> <%= oficio.destinatario%> </pre>
+            </div>
+            <div class="data-item">
+                <span class="data-label">DEPARTAMENTO:</span>
+                <pre class="data-value"> <%= oficio.departamento%> </pre>
+            </div>
+            <div class="data-item">
+                <span class="data-label">ASUNTO:</span>
+                <pre class="data-value"> <%= oficio.asunto%> </pre>
+            </div>
+            <div class="data-item">
+                <span class="data-label">FECHA:</span>
+                <pre class="data-value"> <%= new DATE(oficio.fecha).toLocalDateString() %> </pre>
+            </div>
+            <div class="data-item">
+                <span class="data-label">FOLIO:</span>
+                <pre class="data-value"> <%= oficio.folio%> </pre>
+            </div>
+        <%} %>
+
+        <div class="d-grid gap-2 mt-4">
+            <a href="/" class="btn btn-primary">Registrar Nuevo Oficio</a>
+            <a href="/logout" class="btn btn-secondary mt-2">Cerrar Sesión</a>
+        </div>
+    </div>
+</main>
+
+<style>
+    .data-item{
+        margin-bottom: 2rem;
+    }
+    .data-label{
+        font-weight: bold;
+    }
+    .data-value{
+        background-color: #e9ecef; 
+        padding: 8px 12px; 
+        border-radius: 4px; 
+        font-family: monospace; 
+        word-break: break-all; 
+        white-space: pre-wrap;
+    }
+</style>
