@@ -3,23 +3,29 @@
 <main>
     <div class="container form-container form-container-md" style="margin-top: 20px;">
         <h1 class="mb-4 text-center">Editar Oficio (Consecutivo: <%= oficio.consecutivo %>)</h1>
+        
         <form action="/oficio/editar/<%= oficio.id %>" method="POST">
+            
             <div class="mb-3">
                 <label for="destinatario" class="form-label">Nombre del Destinatario:</label>
                 <input type="text" class="form-control" id="destinatario" name="destinatario" value="<%= oficio.destinatario %>" required>
             </div>
+            
             <div class="mb-3">
                 <label for="departamento" class="form-label">Departamento:</label>
                 <input type="text" class="form-control" id="departamento" name="departamento" value="<%= oficio.departamento %>" required>
             </div>
+            
             <div class="mb-3">
                 <label for="asunto" class="form-label">Asunto:</label>
                 <textarea class="form-control" id="asunto" name="asunto" rows="4" required><%= oficio.asunto %></textarea>
             </div>
+            
             <div class="mb-3">
                 <label for="fecha" class="form-label">Fecha:</label>
                 <input type="date" class="form-control" id="fecha" name="fecha" value="<%= oficio.fecha_formato %>" required>
             </div>
+            
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 <a href="/admin/oficios" class="btn btn-secondary">Cancelar</a>
@@ -27,4 +33,5 @@
         </form>
     </div>
 </main>
+
 <%- include('partials/footer') %>

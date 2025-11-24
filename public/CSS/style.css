@@ -1,38 +1,32 @@
-/* ESTILOS GLOBALES */
-:root{
-    --color_negro:#0000;
-    --color_blanco:#FFF;
-    --color_P:#0c1dbb;
-    --color_S:#AB9144;
-    --fuenteP: "Sand-sherif"
+/* Estilos generales */
+body {
+    background-color: #f8f9fa;
 }
-*,*:after,*::before{
-    box-sizing: inherit;
+
+/* Contenedor principal personalizado */
+.form-container {
+    margin-top: 80px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-html{
-    font-size: 62.5%;
-    box-sizing: border-box;
+
+/* Tamaños específicos para los formularios */
+.form-container-sm {
+    max-width: 400px;
 }
-/* ESTILOS GENERALES DE LA PÁGINA */
-body{
-    background-color: var(--color_negro);
+
+.form-container-md {
+    max-width: 600px;
+    margin-top: 50px;
 }
-/* CONTENEDORES */
-.form-container{
-    margin-top: 1.5rem;
-    background-color: var(--color_blanco);
-    padding: 2rem;
-    border-radius: 3rem;
-    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
+
+/* Estilos específicos para la página de login */
+.login-form .form-label {
+    font-weight: bold;
 }
-.form-container-sm{
-    max-width: 20rem;
-}
-.form-container-md{
-    max-width: 30rem;
-    margin-top: 1.5rem;
-}
-/* ALERTAS */
-.login-form .alert{
+
+.login-form .alert {
     display: none;
 }
