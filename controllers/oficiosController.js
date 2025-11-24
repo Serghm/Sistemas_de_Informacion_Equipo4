@@ -89,7 +89,7 @@ const renderAdminOficios = async (req, res) => {
             const terminoLike = `%${busqueda.trim()}%`;
             
             query = `
-                SELECT id, consecutivo, destinatario, asunto, fecha 
+                SELECT id, consecutivo, destinatario, asunto, fecha , departamento
                 FROM oficios 
                 WHERE 
                     CAST(consecutivo AS TEXT) ILIKE $1 OR 
@@ -104,7 +104,7 @@ const renderAdminOficios = async (req, res) => {
         
         } else {
             query = `
-                SELECT id, consecutivo, destinatario, asunto, fecha 
+                SELECT id, consecutivo, destinatario, asunto, fecha, departamento 
                 FROM oficios 
                 ORDER BY consecutivo DESC
             `;

@@ -17,7 +17,6 @@
                     id="busqueda"
                     name="busqueda" 
                     placeholder="Buscar por consecutivo, destinatario, asunto, departamento o folio..."
-                    
                     value="<%= (typeof busqueda !== 'undefined' ? busqueda : '') %>"
                 >
                 <button class="btn btn-outline-secondary" type="submit">Buscar</button>
@@ -30,7 +29,7 @@
                     <th>Consecutivo</th>
                     <th>Fecha</th>
                     <th>Destinatario</th>
-                    <th>Asunto</th>
+                    <th>Departamento</th> <th>Asunto</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -41,6 +40,9 @@
                             <td><%= oficio.consecutivo %></td>
                             <td><%= new Date(oficio.fecha).toLocaleDateString('es-MX', { timeZone: 'UTC' }) %></td>
                             <td><%= oficio.destinatario %></td>
+                            
+                            <td><%= oficio.departamento %></td>
+                            
                             <td><%= oficio.asunto.substring(0, 50) %>...</td>
                             <td>
                                 <a href="/oficio/<%= oficio.id %>" class="btn btn-sm btn-info">Ver Detalle</a>
@@ -52,16 +54,17 @@
                     
                     <tr>
                         <% if (typeof busqueda !== 'undefined' && busqueda.trim() !== '') { %>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 No se encontraron resultados para "<strong><%= busqueda %></strong>".
                             </td>
                         <% } else { %>
-                            <td colspan="5" class="text-center">
+                            <td colspan="6" class="text-center">
                                 No hay oficios registrados en la base de datos.
                             </td>
                         <% } %>
                     </tr>
-                    <% } %>
+
+                <% } %>
             </tbody>
         </table>
     </div>
